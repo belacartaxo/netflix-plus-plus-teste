@@ -13,7 +13,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./database/mariadb/schemas:/docker-entrypoint-initdb.d
+      - ./database/mariadb/schemas:/docker-entrypoint-initdb.d/schemas
+      - ./database/mariadb/seeds:/docker-entrypoint-initdb.d/seeds
       - mariadb_data:/var/lib/mysql
 
   backend:
