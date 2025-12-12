@@ -4,6 +4,3 @@
 [submodule "streaming-app"]
 	path = streaming-app
 	url = https://github.com/belacartaxo/streaming-app
-[submodule "database"]
-	path = database
-	url = https://github.com/belacartaxo/netflix-plus-plus-database
