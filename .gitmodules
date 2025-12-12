@@ -1,9 +1,6 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/belacartaxo/netflix-plus-plus-backend
-[submodule "database"]
-	path = database
-	url = https://github.com/belacartaxo/netflix-plus-plus-database
 [submodule "streaming-app"]
 	path = streaming-app
 	url = https://github.com/belacartaxo/streaming-app
