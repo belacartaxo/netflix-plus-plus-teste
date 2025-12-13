@@ -28,6 +28,8 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "8080:8080"
+    env_file:
+      - .env
     command: ["java", "-jar", "app.jar"]
 
 volumes:
