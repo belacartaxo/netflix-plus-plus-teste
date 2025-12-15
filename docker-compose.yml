@@ -13,7 +13,6 @@ services:
       - mariadb_data:/var/lib/mysql
       - ./database/mariadb:/docker-entrypoint-initdb.d
 
-
   backend:
     build: ./backend
     container_name: backend
@@ -26,11 +25,21 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     env_file:
       - .env
     command: ["java", "-jar", "app.jar"]
+
+  nginx: 
+    image: nginx:latest
+    container_name: nginx
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
 
 volumes:
   mariadb_data:
